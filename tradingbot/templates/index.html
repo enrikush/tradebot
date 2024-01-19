@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis</title>
+</head>
+<body>
+    <form method="post" action="{{ url_for('fetch') }}">
+        <label for="symbol">Enter Stock Symbol:</label>
+        <input type="text" name="symbol" required>
+        <label for="from">enter when from</label>
+        <input type="date" name="from" required>
+        <label for="to">enter when to</label>
+        <input type="date" name="to" required>
+        <button type="submit">Fetch and Analyze</button>
+    </form>
+
+    {% if results %}
+    <h2>Results:</h2>
+    <ul>
+        <li>Stock Price: {{ results.stock_price }}</li>
+        <li>Volume: {{ results.volume }}</li>
+        <li>Sentiment: {{ results.sentiment }}</li>
+        <li>Grade: {{ results.grade }}</li>
+        <!-- Add more results as needed -->
+    </ul>
+    {% endif %}
+</body>
+</html>

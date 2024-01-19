@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis Result</title>
+</head>
+<body>
+    <h2>Results for {{ symbol }}:</h2>
+        <ul>
+            <li>Stock Price: {{ results.stock_price }}</li>
+            <li>Volume: {{ results.volume }}</li>
+            <li>Sentiment: {{ results.sentiment }}</li>
+            <li>Grade: {{ results.grade }}</li>
+            <!-- Add more results as needed -->
+        </ul>
+</body>
+</html>
